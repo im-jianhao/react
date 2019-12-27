@@ -1,7 +1,7 @@
 // import React, { Component } from "react";
 import React, { PureComponent } from "react";
 
-class Container extends PureComponent {
+class LifeCycle extends PureComponent {
   // props 传和不传的区别
   // constructor和super中传递一个形参(props)可以拿到父组件传递过来的值
   constructor(props) {
@@ -47,4 +47,4 @@ class Container extends PureComponent {
   }
 }
 
-export default Container;
+export default LifeCycle;
