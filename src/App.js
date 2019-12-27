@@ -1,27 +1,30 @@
 import React, { Component } from "react";
 
-import Comment from "./components/Comment";
-
-import TestPropTypes from "./TestPropTypes";
+import Old from "./lifeCycle/Old";
 
 class App extends Component {
   constructor() {
     super();
+    console.log("constructor");
 
-    this.del = this.del.bind(this);
+    this.state = {
+      name: "haha"
+    };
+
+    this.change = () => {
+      this.setState({
+        name: "heihei"
+      });
+    };
   }
 
   render() {
     return (
       <>
-        <Comment></Comment>
-        <TestPropTypes index={1} value={"haha"} del={this.del}></TestPropTypes>
+        <Old name={this.state.name}></Old>
+        <button onClick={this.change}>改变</button>
       </>
     );
-  }
-
-  del() {
-    console.log(1);
   }
 }
 
