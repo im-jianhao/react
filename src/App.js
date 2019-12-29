@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 
-import MyComponent from './hoc/MyComponent'
+// import MyComponent from './hoc/MyComponent'
 
 // import Parent from "./Context/current/Parent";
+
+import TestRouter from "./router/index";
 
 // class App extends Component {
 //   render() {
@@ -12,7 +14,7 @@ import MyComponent from './hoc/MyComponent'
 
 class App extends Component {
   render() {
-    return <MyComponent></MyComponent>;
+    return <TestRouter></TestRouter>;
   }
 }
 
