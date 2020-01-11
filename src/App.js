@@ -4,7 +4,7 @@ import React, { Component } from "react";
 
 // import Parent from "./Context/current/Parent";
 
-import TestRouter from "./router/index";
+import Animate from "./router/Animate";
 
 // class App extends Component {
 //   render() {
@@ -12,9 +12,21 @@ import TestRouter from "./router/index";
 //   }
 // }
 
+import reduxContext from "./redux/context";
+
+import store from "./redux/index";
+
+import Counter from "./redux/Counter";
+
+const { Provider } = reduxContext;
+
 class App extends Component {
   render() {
-    return <TestRouter></TestRouter>;
+    return (
+      <Provider value={{ store }}>
+        <Animate></Animate>
+      </Provider>
+    );
   }
 }
 
