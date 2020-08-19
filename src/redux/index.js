@@ -2,19 +2,22 @@
 
 import { createStore } from "redux";
 
+const INCREMENT = Symbol.for("increment");
+const DECREMENT = Symbol.for("decrement");
+
 const defautState = {
-  count: 0
+  count: 0,
 };
 
 const reducer = (state = defautState, action) => {
   switch (action.type) {
-    case "increment":
+    case INCREMENT:
       return {
-        count: state.count + action.payload
+        count: state.count + action.payload,
       };
-    case "decrement":
+    case DECREMENT:
       return {
-        count: state.count - action.payload
+        count: state.count - action.payload,
       };
     default:
       return state;
@@ -29,14 +32,14 @@ export default store;
 
 // console.log(Redux);
 // 订阅一个事件，在reducer被触发后调用
-// store.subscribe(() => {
-//   console.log(store.getState());
-// })
+store.subscribe(() => {
+  console.log(store.getState());
+})
 
-// store.dispatch({
-//   type: "increment",
-//   payload: 5
-// });
+store.dispatch({
+  type: INCREMENT,
+  payload: 5
+});
 
 // store.dispatch({
 //   type: "decrement",
